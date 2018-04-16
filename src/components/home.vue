@@ -7,7 +7,10 @@
                 <router-link to="/tensorflow">Go to tensorflow</router-link>
             </li>
             <li>
-                <el-button type="primary" @click="open">open btn</el-button>
+                <el-button @click="visible = true" type="primary">Button</el-button>
+                <el-dialog :visible.sync="visible" title="Hello world">
+                    <p>Try Element</p>
+                </el-dialog>
             </li>
         </ul>
     </div>
@@ -18,12 +21,8 @@
         name: 'home',
         data () {
             return {
-                msg: 'Welcome to Your Vue.js App'
-            }
-        },
-        methods: {
-            open() {
-                this.$message('This is a message.');
+                msg: 'Welcome to Your Vue.js App',
+                visible: false
             }
         }
     }
